@@ -194,7 +194,7 @@ jobs:
               continue-on-error: true
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-              run: snyk code test --all-projects --sarif-file-output=snyk-code.sarif
+              run: snyk code test --sarif-file-output=snyk-code.sarif
 
             # snyk container test — image/OS layer vulnerabilities
             - name: Build Docker image for Snyk container scan
