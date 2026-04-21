@@ -179,13 +179,21 @@ jobs:
             - name: Install npm dependencies
               run: npm ci
 
-            - name: Run Snyk to check for vulnerabilities
+            - name: Run Snyk test (find vulnerabilities + SARIF output)
               uses: snyk/actions/node@master
               continue-on-error: true
               env:
                 SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
               with:
                 args: --sarif-file-output=snyk.sarif
+
+            - name: Run Snyk monitor (upload snapshot to Snyk.io)
+              uses: snyk/actions/node@master
+              continue-on-error: true
+              env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              with:
+                command: monitor
 
             - name: Upload Snyk SARIF to Security tab
               if: always()
