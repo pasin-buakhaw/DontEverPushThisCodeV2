@@ -209,7 +209,6 @@ jobs:
               with:
                 name: snyk-results
                 path: snyk.sarif
-
     # GATE#4: IaC scanning (Since there is no infrastructure code here and it is out of scope for this class so we could skip it HELL YEAH!)
     # GATE#5: DAST (We have OWASP ZAP workshop here so we can skip this one too! YOHOOO!)
 
