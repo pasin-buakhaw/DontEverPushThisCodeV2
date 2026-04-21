@@ -144,7 +144,7 @@ Add in repo → Settings → Secrets and variables → Actions:
 | Secret | Where to get |
 |--------|-------------|
 | `SONAR_TOKEN` | https://sonarcloud.io → My Account → Security |
-| `GITHUB_TOKEN` | Auto-provided by GitHub Actions — no setup needed |
+| `TOKEN` | Auto-provided by GitHub Actions — no setup needed |
 
 ---
 
